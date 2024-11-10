@@ -52,13 +52,16 @@ export function Coin({ flipping, result }: CoinFlipProps) {
     } else {
       group.current.rotation.y += clamp((target.current - group.current.rotation.y) * 10 * dt, 0, 1)
     }
-    const scale = flipping ? 1.25 : 1
-    group.current.scale.y += (scale - group.current.scale.y) * .1
+
+    // Setting a larger base scale
+    const baseScale = 3 // Adjust this value to increase or decrease the default size of the coin
+    const scale = flipping ? baseScale * 1.25 : baseScale
+    group.current.scale.y += (scale - group.current.scale.y) * 0.1
     group.current.scale.setScalar(group.current.scale.y)
   })
 
   return (
-    <group ref={group}>
+    <group ref={group} scale={[2, 2, 2]}> {/* Initial scale set to 1.5 for a larger size */}
       <CoinModel />
     </group>
   )
