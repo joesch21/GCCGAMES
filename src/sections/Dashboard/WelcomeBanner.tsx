@@ -10,31 +10,33 @@ const Buttons = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
   @media (min-width: 800px) {
     height: 100%;
   }
 
   @media (max-width: 800px) {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    padding-top: 0!important;
+    padding-top: 0 !important;
   }
 
   & > button {
     border: none;
     width: 100%;
     border-radius: 10px;
-    padding: 10px;
-    background: #ffffffdf;
-    transition: background-color .2s ease;
-    color: black;
+    padding: 12px;
+    background: #FFD700;
+    color: #1a1a2e;
+    font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
     &:hover {
-      background: white;
+      background: #ffdf7e;
+      transform: scale(1.05);
     }
   }
 `
@@ -61,43 +63,39 @@ const Welcome = styled.div`
     }
   }
 
-  background: linear-gradient(-45deg, #ffb07c, #ff3e88, #2969ff, #ef3cff, #ff3c87);
-  background-size: 300% 300%;
-  animation: welcome-fade-in .5s ease, backgroundGradient 30s ease infinite;
-  border-radius: 10px;
+  background: linear-gradient(-45deg, #1a1a2e, #2f2f47, #3c3c5e, #1a1a2e);
+  background-size: 400% 400%;
+  animation: welcome-fade-in 0.8s ease, backgroundGradient 15s ease infinite;
+  border-radius: 15px;
   position: relative;
-  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding: 20px;
-  filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06));
-
-  & img {
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    width: 100px;
-    height: 100px;
-    top: 0;
-    right: 0;
-    &:nth-child(1) {animation-delay: 0s;}
-    &:nth-child(2) {animation-delay: 1s;}
-  }
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  padding: 30px;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.07));
+  color: #ffd700;
+  text-align: center;
+  min-height: 300px; /* Add minimum height to center vertically */
 
   & > div {
     padding: 0px;
-    filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06));
+    max-width: 500px;
+    filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.15)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
   }
 
-  @media (min-width: 800px) {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    padding: 0;
-    & > div {
-      padding: 40px;
-    }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #FFD700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-top: 10px;
   }
 `
 
@@ -105,6 +103,7 @@ export function WelcomeBanner() {
   const wallet = useWallet()
   const walletModal = useWalletModal()
   const store = useUserStore()
+
   const copyInvite = () => {
     store.set({ userModal: true })
     if (!wallet.connected) {
@@ -115,22 +114,13 @@ export function WelcomeBanner() {
   return (
     <Welcome>
       <div>
-        <h1>Welcome to Gamba v2 👋</h1>
+        <h1>Welcome to Gold Condor Capital Gaming Place 🎲</h1>
         <p>
-          A fair, simple and decentralized casino on Solana.
+          Have some fun with minted free test GCC Tokens. 
+          <br></br>
+          It's just for fun cats, you can't actually win real money!
         </p>
       </div>
-      <Buttons>
-        <button onClick={copyInvite}>
-          💸 Copy Invite
-        </button>
-        <button onClick={() => window.open('https://v2.gamba.so/', '_blank')}>
-          🚀 Add Liquidity
-        </button>
-        <button onClick={() => window.open('https://discord.gg/HSTtFFwR', '_blank')}>
-          💬 Discord
-        </button>
-      </Buttons>
     </Welcome>
   )
 }

@@ -8,8 +8,8 @@ import { Container, Jackpot, Profit, Recent, Skeleton } from './RecentPlays.styl
 import { ShareModal } from './ShareModal'
 import { useRecentPlays } from './useRecentPlays'
 
-function TimeDiff({ time, suffix = 'ago' }: {time: number, suffix?: string}) {
-  const diff = (Date.now() - time)
+function TimeDiff({ time, suffix = 'ago' }: { time: number, suffix?: string }) {
+  const diff = Date.now() - time
   return React.useMemo(() => {
     const seconds = Math.floor(diff / 1000)
     const minutes = Math.floor(seconds / 60)
@@ -24,7 +24,7 @@ function TimeDiff({ time, suffix = 'ago' }: {time: number, suffix?: string}) {
   }, [diff])
 }
 
-function RecentPlay({ event }: {event: GambaTransaction<'GameSettled'>}) {
+function RecentPlay({ event }: { event: GambaTransaction<'GameSettled'> }) {
   const data = event.data
   const token = useTokenMeta(data.tokenMint)
   const md = useMediaQuery('md')
@@ -46,7 +46,6 @@ function RecentPlay({ event }: {event: GambaTransaction<'GameSettled'>}) {
       <Profit $win={profit > 0}>
         <img src={token.image} height="20px" style={{ borderRadius: '50%' }} />
         <TokenValue amount={Math.abs(profit)} mint={data.tokenMint} />
-        {/* {(token.usdPrice * profit / (10 ** token.decimals)).toLocaleString()} USD */}
       </Profit>
 
       {md && (
@@ -74,25 +73,28 @@ export default function RecentPlays() {
 
   return (
     <Container>
-      {selectedGame && (
-        <ShareModal event={selectedGame} onClose={() => setSelectedGame(undefined)} />
+      {/* Prevent rendering of recent plays */}
+      {false && (
+        <>
+          {selectedGame && (
+            <ShareModal event={selectedGame} onClose={() => setSelectedGame(undefined)} />
+          )}
+          {!events.length && Array.from({ length: 10 }).map((_, i) => (
+            <Skeleton key={i} />
+          ))}
+          {events.map((tx) => (
+            <Recent key={tx.signature} onClick={() => setSelectedGame(tx)}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '.5em' }}>
+                <RecentPlay event={tx} />
+              </div>
+              <TimeDiff time={tx.time} suffix={md ? 'ago' : ''} />
+            </Recent>
+          ))}
+          <GambaUi.Button main onClick={() => window.open(`${EXPLORER_URL}/platform/${PLATFORM_CREATOR_ADDRESS.toString()}`)}>
+            🚀 Explorer
+          </GambaUi.Button>
+        </>
       )}
-      {!events.length && Array.from({ length: 10 }).map((_, i) => (
-        <Skeleton key={i} />
-      ))}
-      {events.map(
-        (tx) => (
-          <Recent key={tx.signature} onClick={() => setSelectedGame(tx)}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '.5em' }}>
-              <RecentPlay event={tx} />
-            </div>
-            <TimeDiff time={tx.time} suffix={md ? 'ago' : ''} />
-          </Recent>
-        ),
-      )}
-      <GambaUi.Button main onClick={() => window.open(`${EXPLORER_URL}/platform/${PLATFORM_CREATOR_ADDRESS.toString()}`)}>
-        🚀 Explorer
-      </GambaUi.Button>
     </Container>
   )
 }
