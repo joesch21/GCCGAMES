@@ -108,29 +108,54 @@ export const Card = styled.div<{$small?: boolean}>`
     padding: 10px;
     border-radius: 8px;
   `}
+  
+  /* Set solid white background */
+  background-color: white;
+  color: #333;
   box-shadow: -5px 5px 10px 1px #0000003d;
-  background: white;
   aspect-ratio: 4/5.5;
   position: relative;
-  color: #333;
   overflow: hidden;
+
+  /* Logo overlay as subtle background */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Low opacity to keep it subtle */
+    z-index: 0;
+  }
+
   .rank {
     font-weight: bold;
     line-height: 1em;
+    position: relative;
+    z-index: 1;
+    background: none; /* Ensure no background */
   }
+  
   .suit {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 50%;
     height: 50%;
-    background-size: cover;
-    background-repeat: none;
-    transform: translate(0%, 0%);
+    color: white; /* Set font color to white */
+    background: none; /* Explicitly ensure no background */
     font-size: 128px;
     opacity: .9;
+    z-index: 1;
   }
 `
+
+
 const float = keyframes`
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }

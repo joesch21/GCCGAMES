@@ -142,11 +142,12 @@ export default function HiLo(props: HiLoConfig) {
                       style={{
                         transform: `translate(${offset * 30}px, ${-offset * 0}px) rotateZ(-5deg) rotateY(5deg)`,
                         opacity,
+                        backgroundSize: 'cover',
                       }}
                     >
                       <Card>
                         <div className="rank">{RANK_SYMBOLS[card.rank]}</div>
-                        <div className="suit" style={{ backgroundImage: 'url(' + props.logo +  ')' }} />
+                        <div className="suit" style={{ backgroundImage: 'url(' + props.logo + ')' }} />
                       </Card>
                     </CardContainer>
                   )

@@ -3,13 +3,13 @@
 }
 
 :root {
-  --background-color: #241d06;
+  --background-color: #bf9819;
   --text-color: #ffffff;
   --gamba-ui-primary-color: #e0dee3;
 
   --gamba-ui-border-radius: 10px;
 
-  --gamba-ui-button-default-background: #11113d;
+  --gamba-ui-button-default-background: #292998;
   --gamba-ui-button-default-background-hover: #11111d;
   --gamba-ui-button-default-color: white;
 
@@ -17,7 +17,7 @@
   --gamba-ui-button-main-color: white;
   --gamba-ui-button-main-background-hover: #e1dfe8;
 
-  --gamba-ui-input-background: #0e0e16;
+  --gamba-ui-input-background: #1c1c5d;
   --gamba-ui-input-color: #ffffff;
   --gamba-ui-input-background-hover: #11111d;
 }
@@ -58,6 +58,6 @@ body::-webkit-scrollbar-thumb {
   height: 40px;
   line-height: 40px;
   font-weight: normal;
-  background: rgb(55, 57, 82);
+  background: rgb(12, 14, 45);
   border-radius: 10px;
 }
