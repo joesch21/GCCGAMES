@@ -1,0 +1,82 @@
+[33m0ee6ccc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m cards on slots changed
+[33m97f48d9[m graphics and colours
+[33m148a37e[m Enlarged Coin Model and added flipping animation scaling.
+[33mf7d01f3[m update opening disclaimer
+[33m70edabe[m Finalize project with updated RecentPlays component
+[33m802239b[m Dice bet array optimization
+[33m9779a52[m referral fixes
+[33m23bd9cb[m Merge pull request #13 from litchdoteth/main
+[33m3a66610[m fixed referral program
+[33m7319b8b[m referral stuff
+[33m592bd20[m use localStorage
+[33mf454c0f[m constants.ts update
+[33mb8ba2d6[m Version bump
+[33m920c679[m package bumps
+[33ma283442[m downgrade ledgerhq
+[33m7529574[m z-index fix
+[33m385de1b[m minor ui stuff
+[33m49380a7[m added crash
+[33m6e8fa30[m Update Game.tsx
+[33m3c827df[m Update default values
+[33m67b4ef0[m Stuff
+[33mbd7e862[m Some comments
+[33ma5f0633[m update to latest version of platform template, optimized transactions, priority fee settings, new token metadata fetcher etc.
+[33m218b2c5[m corrected new token add example
+[33mf3514fd[m Update vite.config.ts
+[33m05c2fb9[m updated pnpm-lock
+[33md877ef6[m Install three.js types
+[33md54c185[m Update packages
+[33md9293bf[m small fix
+[33mf0c6069[m fix TOKEN import in index.ts
+[33m75a55eb[m Fix verification link
+[33m2e6da98[m Use BrowserRouter instead of hash router
+[33m4bfd9cd[m added publickkey import in constants.ts
+[33mf648c43[m package version bump
+[33m72c8398[m Fixed coinflip imports
+[33m3e52a3d[m Default rpc endpoint
+[33mddff011[m Default rpc endpoint
+[33m508914a[m Version bump
+[33me42452f[m @preact/signals-react
+[33mbd923dd[m .env.example
+[33m384dbc4[m V2
+[33md1f4622[m Remove default creatorFee
+[33ma9742a8[m gamba 0.8.7
+[33mfbc7b40[m Update lockfile
+[33mc91d962[m Update
+[33mb605207[m Version
+[33m2e2ec13[m Version
+[33m1b3f427[m 0.8.0
+[33mbfb9ecc[m Readme
+[33m254d0e8[m Updated mines
+[33ma896e80[m Dice fix max bet
+[33m679f9a6[m Dice tweaks
+[33mc527caf[m small adjustment
+[33m37af9ec[m added Dice game
+[33m1ec422d[m Fix roulette chip colors
+[33mcbf32fa[m update version
+[33mb971a6c[m adjusted roulette numbers to work with new min bet
+[33m58dfe24[m made it so that you dont need to reset games with a tx
+[33m384e5f8[m fixed mines and hilo to make sense for freeplays and some other stuff
+[33m9f1a355[m fixed games to work with new payout and adjusted HiLo to work like traditional HiLo
+[33m00138b9[m Link to gamba.so
+[33m914be2d[m Bump gamba version
+[33mdd5148f[m .env.example
+[33m5da2a68[m fix hi lo and mines for new min bet
+[33mfdf1bc6[m Update gamba version
+[33m21a5c9a[m Version bump
+[33mc269729[m Added colors for remaining roulette squares
+[33mdd1ca10[m Update constants.ts for colour change
+[33m72390eb[m Testing a thing
+[33mc8a92c6[m fixed cashout in HiLo
+[33mc34bae5[m added HiLo
+[33m65d5f43[m added HiLo
+[33ma4dd966[m Update Mines Claim button to reset game
+[33m8b8bdaa[m Revert "first commit"
+[33mb6f3b91[m first commit
+[33mc8270c3[m Added slots
+[33m73441c0[m Readme WIP
+[33m7c30eac[m package.json
+[33m8e87236[m Added some more padding to games
+[33m034619f[m Some updates
+[33mbdc81f1[m remove unfinished games
+[33m5bbbd61[m first commit
